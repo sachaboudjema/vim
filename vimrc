@@ -12,13 +12,10 @@ Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 filetype plugin indent on
 
-
+set t_ut=
 set t_Co=256
 set background=light
 colorscheme PaperColor
-
-" Python
-let g:python_highlight_all = 1
 
 " Show line numbers
 set number
@@ -41,12 +38,7 @@ set so=7
 set wildmenu
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
+set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
 "Always show current position
 set ruler
@@ -75,6 +67,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch 
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -117,7 +110,3 @@ set wrap "Wrap lines
 
 " Always show the status line
 set laststatus=2
-
-
-" Markdown
-let vim_markdown_folding_disabled = 1
